@@ -36,4 +36,4 @@ sudo reboot
 
 *************************************************************************************************
 
-4. To quit chromium when it is in kiosk mode, press the command key to show the start menu
+Tip 4: To quit chromium when it is in kiosk mode, press the command key to show the start menu
