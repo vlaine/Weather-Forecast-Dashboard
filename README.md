@@ -1,5 +1,9 @@
 # Weather-Forecast-Dashboard
 Weather Forecast Dashboard written in jquery and html.
+- Scrolling alerts
+- Configurable daily forecast (0 [hidden] to 8 days)
+- Configurable hourly forecast (0 [hidden] to 49 hours)
+- Multiple units available (ca, uk2, us, si)
 
 Steps:
 - Download the source
