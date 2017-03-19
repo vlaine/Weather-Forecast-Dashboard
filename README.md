@@ -39,8 +39,17 @@ sudo reboot
 Tip 4: To quit chromium when it is in kiosk mode, press the command key to show the start menu
 
 *************************************************************************************************
-![screenshot_si_6days](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/si_6days.png?raw=true)
+Forecast With Alerts
+![Forecast With Alerts](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/alerts.PNG?raw=true)
 
-![screenshot_si_3days](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/si_3days.PNG?raw=true)
+Imperial
+![Imperial](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/imperial.PNG?raw=true)
 
-![screenshot_si_imperia](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/imperial.PNG?raw=true)
+3 days Forecast
+![3 days forecast](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/3days.PNG?raw=true)
+
+No Hourly Forecast
+![No Hourly Forecast](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/noHourly.PNG?raw=true)
+
+Just Hourly Forecast
+![Just Hourly Forecast](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/justHourly.PNG?raw=true)
