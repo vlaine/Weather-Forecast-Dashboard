@@ -39,3 +39,8 @@ sudo reboot
 Tip 4: To quit chromium when it is in kiosk mode, press the command key to show the start menu
 
 *************************************************************************************************
+![screenshot_si_6days](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/si_6days.png?raw=true)
+
+![screenshot_si_3days](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/si_3days.png?raw=true)
+
+![screenshot_si_imperia](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/imperial.png?raw=true)
