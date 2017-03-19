@@ -12,8 +12,11 @@ var hourlyNbOfHours = 20; // 0-49
 var debugging = false; // will allow showing forecast for past days.  Usefull when playing with sample data
 
 // Set for your language
+var todayLabel = "Today";
 var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+//var todayLabel = "Aujourd'hui";
 //var week = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 //var month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 

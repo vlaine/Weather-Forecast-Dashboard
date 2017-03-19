@@ -1,7 +1,4 @@
-﻿var week = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
-var month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
-
-var hasAlerts;
+﻿var hasAlerts;
 function showData(data) {
     showAlerts(data.alerts);
     showCurrent(data.currently, data.daily.summary);
@@ -65,7 +62,7 @@ function showForecast(days) {
         dateTime.setUTCSeconds(day.time);
         var dayDate = dateTime.setHours(0, 0, 0, 0);
         if (dayDate >= now || debugging) {
-            titles.push('<th>' + (dayDate == now ? "Aujourd'hui" : week[dateTime.getDay()]) + '</th>');
+            titles.push('<th>' + (dayDate == now ? todayLabel : week[dateTime.getDay()]) + '</th>');
             icons.push('<td><i class="' + getIconClass(day.icon, false) + '"></i></td>');
             summaries.push('<td>' + day.summary + '</td>');
             maxTemps.push('<td>' + getTemp(day.temperatureMax) + '</td>');
