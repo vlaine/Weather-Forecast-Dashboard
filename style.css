@@ -217,7 +217,6 @@ body {
     width: -moz-calc(100% - 20px);
     width: -webkit-calc(100% - 20px);
     margin-bottom: 20px;
-    border-collapse: collapse;
     margin-left: 10px;
 }
 
