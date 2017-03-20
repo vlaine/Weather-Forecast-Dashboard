@@ -57,3 +57,6 @@ No Hourly Forecast
 
 Just Hourly Forecast
 ![Just Hourly Forecast](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/justHourly.PNG?raw=true)
+
+Forecast in French
+![Forecast in French](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/francais.PNG?raw=true)
