@@ -2,6 +2,7 @@
 function showData(data) {
 	$("#apparentTempLabel").text(apparentTempLabel);
 	$("#windLabel").text(windLabel);
+	if (!showDarkSkyLink) {$("#darkSkyLink").hide();}
     showAlerts(data.alerts);
     showCurrent(data.currently, data.daily.summary);
     showDateTime();
@@ -13,7 +14,7 @@ function showData(data) {
 function showAlerts(alerts) {
     var divAlerts = $("#alerts");
 
-    if (alerts != null && alerts.length > 0) {
+    if (showAlerts != false && alerts != null && alerts.length > 0) {
         hasAlerts = true;
         var alertMessages = [];
         $.each(alerts, function (index, alert) {
@@ -30,12 +31,16 @@ function showAlerts(alerts) {
 }
 
 function showCurrent(current, summary) {
+	if (showCurrentForecast)
+	{
     $("#currentSummary").html(showCurrentSummary ? summary : "");
 	setIcon(current.icon, "#currentIcon", true, showCurrentIcon);	
     $("#currentTemp").text(getTemp(current.temperature));
     $("#currentApparentTemp").text(getTemp(current.apparentTemperature));	
     $("#currentPrec").text(getProbability(current.precipProbability));
     $("#currentWind").html('<span >' + Math.ceil(current.windSpeed)+'</span> ' + windUnit );
+	}
+	else {$("#header").hide();}
 }
 
 function showDateTime() {
