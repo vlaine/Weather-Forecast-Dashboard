@@ -9,6 +9,14 @@ var snowPrecUnit = "cm";
 var windUnit = "km/h"
 var forecastNbOfDays = 6; // 0 to 8
 var hourlyNbOfHours = 20; // 0-49
+
+var showCurrentIcon = true;
+var showCurrentSummary = true;
+var showCurrentDateTime = true;
+var showForecastIcon = true;
+var showForecastSummary = true;
+var showHourlyIcon = true;
+
 var debugging = false; // will allow showing forecast for past days.  Usefull when playing with sample data
 
 // Set for your language

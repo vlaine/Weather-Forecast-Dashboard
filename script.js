@@ -28,19 +28,27 @@ function showAlerts(alerts) {
 }
 
 function showCurrent(current, summary) {
-    $("#currentSummary").html(summary);
-    setIcon(current.icon, "#currentIcon", true);
+    $("#currentSummary").html(showCurrentSummary ? summary : "");
+	setIcon(current.icon, "#currentIcon", true, showCurrentIcon);	
     $("#currentTemp").text(getTemp(current.temperature));
-    $("#currentApparentTemp").text(getTemp(current.apparentTemperature));
+    $("#currentApparentTemp").text(getTemp(current.apparentTemperature));	
     $("#currentPrec").text(getProbability(current.precipProbability));
     $("#currentWind").html('<span >' + Math.ceil(current.windSpeed)+'</span> ' + windUnit );
 }
 
 function showDateTime() {
-    var now = new Date();
-    $("#currentDate").text(week[now.getDay()] + ', ' + now.getDate() + ' ' + month[now.getMonth()]);
-    $("#currentTime").text(now.getHours() + (now.getMinutes() < 10 ? ":0" : ":") + now.getMinutes());    
-    var t = setTimeout(showDateTime, 500);
+	if (showCurrentDateTime)
+	{
+		var now = new Date();
+		$("#currentDate").text(week[now.getDay()] + ', ' + now.getDate() + ' ' + month[now.getMonth()]);
+		$("#currentTime").text(now.getHours() + (now.getMinutes() < 10 ? ":0" : ":") + now.getMinutes());        
+		var t = setTimeout(showDateTime, 500);
+	}
+	else
+	{
+		$("#currentDate").text("");
+		$("#currentTime").text("");
+	}	
 }
 
 function showForecast(days) {
@@ -63,14 +71,15 @@ function showForecast(days) {
         var dayDate = dateTime.setHours(0, 0, 0, 0);
         if (dayDate >= now || debugging) {
             titles.push('<th>' + (dayDate == now ? todayLabel : week[dateTime.getDay()]) + '</th>');
-            icons.push('<td><i class="' + getIconClass(day.icon, false) + '"></i></td>');
-            summaries.push('<td>' + day.summary + '</td>');
+            icons.push('<td><i class="' + getIconClass(day.icon, false, showForecastIcon) + '"></i></td>');
+            if (showForecastSummary){summaries.push('<td>' + day.summary + '</td>')};
             maxTemps.push('<td>' + getTemp(day.temperatureMax) + '</td>');
             minTemps.push('<td>' + getTemp(day.apparentTemperatureMin) + '</td>');
             precipitations.push('<td>' + getProbability(day.precipProbability) + '%' + '</td>');
             var precMult = (day.precipType == 'snow' || units == 'us') ? 1 : 10;
-            var precVal = day.precipAccumulation == null ? 0 : Math.ceil(day.precipAccumulation * precMult);
-            accumulations.push('<td>' + precVal + (day.precipType == 'snow' ? snowPrecUnit : rainPrecUnit) + '</td>');
+			var precVal = day.precipAccumulation == null ? 0 : Math.ceil(day.precipAccumulation * precMult);
+			accumulations.push('<td>' + precVal + (day.precipType == 'snow' ? snowPrecUnit : rainPrecUnit) + '</td>');
+			
             i++;
         }
     });
@@ -80,7 +89,7 @@ function showForecast(days) {
     $("#forecastSummaries").html('<td></td>' + summaries.join(""));
     $("#forecastMaxTemps").html('<td><div class="vertical">max</div></td>' + maxTemps.join(""));
     $("#forecastMinTemps").html('<td><div class="vertical">min</div></td>' + minTemps.join(""));
-    $("#forecastPrecipitations").html('<td><div class="vertical">préc</div></td>' + precipitations.join(""));
+    $("#forecastPrecipitations").html('<td><div class="vertical">prob</div></td>' + precipitations.join(""));
     $("#forecastAccumulations").html('<td><div class="vertical">acc</div></td>' + accumulations.join(""));
 
     var width = Math.floor(100 / forecastNbOfDays);
@@ -103,7 +112,7 @@ function showHourlyForecast(hourlyForecasts) {
         var dayDate = dateTime.setHours(dateTime.getHours(), 0, 0, 0);
         if (dayDate >= now || debugging) {
             hours.push("<th>" + dateTime.getHours() + "h</th>");
-            icons.push('<td><i class="' + getIconClass(hourly.icon, true) + '"></i></td>');
+            if (showHourlyIcon){icons.push('<td><i class="' + getIconClass(hourly.icon, true, showHourlyIcon) + '"></i></td>');}
             temps.push('<td>' + Math.ceil(hourly.temperature) + '°</td>');
             precipitations.push('<td>' + getProbability(hourly.precipProbability) + '<span>%</span></td>');
         }
@@ -120,12 +129,12 @@ function showHourlyForecast(hourlyForecasts) {
     $("#hourlyPrec").html(precipitations.join(""));
 }
 
-function setIcon(icon, id, keepNight) {
-    $(id).attr('class', getIconClass(icon, keepNight));
+function setIcon(icon, id, keepNight, isVisible) {
+	$(id).attr('class', getIconClass(icon, keepNight, isVisible));
 }
 
-function getIconClass(icon, keepNight) {
-    return 'icon icon-' + (keepNight ? icon.replace(/-|day/ig, "") : icon.replace(/-|day|night/ig, ""));
+function getIconClass(icon, keepNight, isVisible) {
+    return isVisible ? ('icon icon-' + (keepNight ? icon.replace(/-|day/ig, "") : icon.replace(/-|day|night/ig, ""))) : "";
 }
 
 function getTemp(temp) {
