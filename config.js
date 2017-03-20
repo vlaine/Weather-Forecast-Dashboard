@@ -21,10 +21,14 @@ var debugging = false; // will allow showing forecast for past days.  Usefull wh
 
 // Set for your language
 var todayLabel = "Today";
+var windLabel = "wind";
+var feelingLabel = "feeling";
 var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 //var todayLabel = "Aujourd'hui";
+//var windLabel = "vent";
+//var feelingLabel = "ressentie";
 //var week = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 //var month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 
