@@ -14,7 +14,7 @@ function showData(data) {
 function showAlerts(alerts) {
     var divAlerts = $("#alerts");
 
-    if (showAlerts != false && alerts != null && alerts.length > 0) {
+    if (showForecastAlerts && alerts != null && alerts.length > 0) {
         hasAlerts = true;
         var alertMessages = [];
         $.each(alerts, function (index, alert) {
