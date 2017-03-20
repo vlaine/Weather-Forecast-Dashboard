@@ -20,15 +20,17 @@ var showHourlyIcon = true;
 var debugging = false; // will allow showing forecast for past days.  Usefull when playing with sample data
 
 // Set for your language
+// English
 var todayLabel = "Today";
 var windLabel = "wind";
-var feelingLabel = "feeling";
+var apparentTempLabel = "feeling";
 var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+// French
 //var todayLabel = "Aujourd'hui";
 //var windLabel = "vent";
-//var feelingLabel = "ressentie";
+//var apparentTempLabel = "ressentie";
 //var week = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 //var month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 

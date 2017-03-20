@@ -1,7 +1,7 @@
 ﻿var hasAlerts;
 function showData(data) {
-	$("#apparentTempTitle").text(apparentTempLabel);
-	$("#windTitle").text(windLabel);
+	$("#apparentTempLabel").text(apparentTempLabel);
+	$("#windLabel").text(windLabel);
     showAlerts(data.alerts);
     showCurrent(data.currently, data.daily.summary);
     showDateTime();
