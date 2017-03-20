@@ -10,8 +10,8 @@ var windUnit = "km/h"
 var forecastNbOfDays = 6; // 0 to 8
 var hourlyNbOfHours = 20; // 0-49
 
-var showForecastAlerts = true;
-var showCurrentForecast = true;
+var showScrollingAlerts = true;
+var showCurrentWeather = true;
 var showCurrentIcon = true;
 var showCurrentSummary = true;
 var showCurrentDateTime = true;

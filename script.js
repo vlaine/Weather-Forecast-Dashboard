@@ -14,7 +14,7 @@ function showData(data) {
 function showAlerts(alerts) {
     var divAlerts = $("#alerts");
 
-    if (showForecastAlerts && alerts != null && alerts.length > 0) {
+    if (showScrollingAlerts && alerts != null && alerts.length > 0) {
         hasAlerts = true;
         var alertMessages = [];
         $.each(alerts, function (index, alert) {
@@ -31,14 +31,14 @@ function showAlerts(alerts) {
 }
 
 function showCurrent(current, summary) {
-	if (showCurrentForecast)
+	if (showCurrentWeather)
 	{
-    $("#currentSummary").html(showCurrentSummary ? summary : "");
-	setIcon(current.icon, "#currentIcon", true, showCurrentIcon);	
-    $("#currentTemp").text(getTemp(current.temperature));
-    $("#currentApparentTemp").text(getTemp(current.apparentTemperature));	
-    $("#currentPrec").text(getProbability(current.precipProbability));
-    $("#currentWind").html('<span >' + Math.ceil(current.windSpeed)+'</span> ' + windUnit );
+		$("#currentSummary").html(showCurrentSummary ? summary : "");
+		setIcon(current.icon, "#currentIcon", true, showCurrentIcon);	
+		$("#currentTemp").text(getTemp(current.temperature));
+		$("#currentApparentTemp").text(getTemp(current.apparentTemperature));	
+		$("#currentPrec").text(getProbability(current.precipProbability));
+		$("#currentWind").html('<span >' + Math.ceil(current.windSpeed)+'</span> ' + windUnit );
 	}
 	else {$("#header").hide();}
 }
@@ -79,7 +79,7 @@ function showForecast(days) {
         if (dayDate >= now || debugging) {
             titles.push('<th>' + (dayDate == now ? todayLabel : week[dateTime.getDay()]) + '</th>');
             icons.push('<td><i class="' + getIconClass(day.icon, false, showForecastIcon) + '"></i></td>');
-            if (showForecastSummary){summaries.push('<td>' + day.summary + '</td>')};
+            summaries.push('<td>' + day.summary + '</td>');
             maxTemps.push('<td>' + getTemp(day.temperatureMax) + '</td>');
             minTemps.push('<td>' + getTemp(day.apparentTemperatureMin) + '</td>');
             precipitations.push('<td>' + getProbability(day.precipProbability) + '%' + '</td>');
@@ -102,6 +102,8 @@ function showForecast(days) {
     var width = Math.floor(100 / forecastNbOfDays);
     $("#forecast td").css('width', width + '%');
     $("#forecastSummaries td").css('fontSize', hasAlerts ?'14px': '16px');
+	
+	if (!showForecastSummary){$("#forecastSummaries").hide()};
 }
 
 function showHourlyForecast(hourlyForecasts) {
