@@ -39,12 +39,12 @@ sudo reboot
 ### Tip 4: To quit chromium 
 When it is in kiosk mode, press the command key to show the start menu
 
-##Forecast With Alerts
+## Forecast With Alerts
 ![Forecast With Alerts](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/600x1024_1.jpg?raw=true)
 
-##Imperial
+## Imperial
 ![Imperial](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/imperial.jpg?raw=true)
 
-##Kitchen countertop project
+## Kitchen countertop project
 I installed the weather forecast dashboard on a Raspberry Pi W and mounted it behind a 7" display
 ![Raspberry Pi Zero W with a 7in Screen](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/Raspberry%20Pi%20Zero%20W%20with%20a%207in%20Screen.JPG?raw=true)
