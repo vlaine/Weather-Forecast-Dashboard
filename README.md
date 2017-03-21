@@ -2,7 +2,7 @@
 Read the Wiki: ![https://github.com/vlaine/Weather-Forecast-Dashboard/wiki](https://github.com/vlaine/Weather-Forecast-Dashboard/wiki)
 
 ## Weather Forecast Dashboard written in jquery and html.
-- Scrolling alerts
+- Optional scrolling alerts
 - Configurable daily forecast (0 [hidden] to 8 days)
 - Configurable hourly forecast (0 [hidden] to 49 hours)
 - Multiple units available (ca, uk2, us, si)
