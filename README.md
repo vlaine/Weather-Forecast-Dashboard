@@ -1,16 +1,17 @@
 # Weather-Forecast-Dashboard
-Weather Forecast Dashboard written in jquery and html.
+Read the Wiki: ![https://github.com/vlaine/Weather-Forecast-Dashboard/wiki](https://github.com/vlaine/Weather-Forecast-Dashboard/wiki)
+
+## Weather Forecast Dashboard written in jquery and html.
 - Scrolling alerts
 - Configurable daily forecast (0 [hidden] to 8 days)
 - Configurable hourly forecast (0 [hidden] to 49 hours)
 - Multiple units available (ca, uk2, us, si)
 
-Steps:
+## Steps:
 - Download the source
 - Edit the config.js file
 - Launch index.html in your favorite browser
 
-Read the Wiki: ![https://github.com/vlaine/Weather-Forecast-Dashboard/wiki](https://github.com/vlaine/Weather-Forecast-Dashboard/wiki)
 ***
 ## Tips for Raspberry Pi below
 
