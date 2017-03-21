@@ -14,6 +14,12 @@ This is the most complete and versatile weather forecast dashboard.  It is also 
 - Launch index.html in your favorite browser
 
 ***
+## Kitchen countertop project
+I installed the weather forecast dashboard on a Raspberry Pi W and mounted it behind a 7" display
+![Raspberry Pi Zero W with a 7in Screen](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/Raspberry%20Pi%20Zero%20W%20with%20a%207in%20Screen.JPG?raw=true)
+
+***
+
 ## Tips for Raspberry Pi below
 
 ### Tip 1: Disable screen saver.
@@ -44,7 +50,3 @@ When it is in kiosk mode, press the command key to show the start menu
 
 ## Imperial
 ![Imperial](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/imperial.jpg?raw=true)
-
-## Kitchen countertop project
-I installed the weather forecast dashboard on a Raspberry Pi W and mounted it behind a 7" display
-![Raspberry Pi Zero W with a 7in Screen](https://github.com/vlaine/Weather-Forecast-Dashboard/blob/master/screehshots/Raspberry%20Pi%20Zero%20W%20with%20a%207in%20Screen.JPG?raw=true)
