@@ -70,7 +70,7 @@ function showCurrent(current, summary) {
 		$("#currentTemp").text(getTemp(current.temperature));
 		$("#currentApparentTemp").text(getTemp(current.apparentTemperature));	
 		$("#currentPrec").text(getProbability(current.precipProbability));
-		$("#currentWind").html('<span >' + Math.ceil(current.windSpeed)+'</span> ' + windUnit );
+		$("#currentWind").html('<span >' + Math.round(current.windSpeed)+'</span> ' + windUnit );
 	}
 	else {$("#header").hide();}
 }
@@ -114,9 +114,13 @@ function showForecast(days) {
             maxTemps.push('<td>' + getTemp(day.temperatureMax) + '</td>');
             minTemps.push('<td>' + getTemp(day.apparentTemperatureMin) + '</td>');
             precipitations.push('<td>' + getProbability(day.precipProbability) + '%' + '</td>');
-            var precMult = (day.precipType == 'snow' || units == 'us') ? 1 : 10;
-			var precVal = day.precipAccumulation == null ? 0 : Math.ceil(day.precipAccumulation * precMult);
-			accumulations.push('<td>' + precVal + (day.precipType == 'snow' ? snowPrecUnit : rainPrecUnit) + '</td>');
+			var accumulation = day.precipAccumulation != null ? 
+			              Math.round(day.precipAccumulation) :
+						  ( day.precipIntensity == null ? 0 :
+						    (Math.round( day.precipIntensity * 240 ) / 10)
+						  );
+		    var accumulationUnits = (day.precipType == 'snow' ? snowPrecUnit : rainPrecUnit);
+			accumulations.push('<td>' + accumulation + accumulationUnits + '</td>');
 			
             i++;
         }
@@ -153,7 +157,7 @@ function showHourlyForecast(hourlyForecasts) {
         if (dayDate >= now || debugging) {
             hours.push("<th>" + dateTime.getHours() + "h</th>");
             if (showHourlyIcon){icons.push('<td><i class="' + getIconClass(hourly.icon, true, showHourlyIcon) + '"></i></td>');}
-            temps.push('<td>' + Math.ceil(hourly.temperature) + '°</td>');
+            temps.push('<td>' + Math.round(hourly.temperature) + '°</td>');
             precipitations.push('<td>' + getProbability(hourly.precipProbability) + '<span>%</span></td>');
         }
         i++;
@@ -178,9 +182,9 @@ function getIconClass(icon, keepNight, isVisible) {
 }
 
 function getTemp(temp) {
-    return Math.ceil(temp) + '°' + degreeSymbol;
+    return Math.round(temp) + '°' + degreeSymbol;
 }
 
 function getProbability(probability) {
-    return probability == null ? 0 : Math.ceil(probability * 100);
+    return probability == null ? 0 : Math.round(probability * 100);
 }
