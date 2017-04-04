@@ -9,9 +9,9 @@
 </head>
 <body>
     <div id="alerts" class="marquee"></div>
-    <table id="header" cellspacing="20" style="margin: -20px -10px -20px -30px;">
+    <table id="header" cellspacing="20" style="margin: -30px -10px -40px -30px;">
         <tr>
-            <td><i id="currentIcon" /></td>
+            <td><i id="currentIcon"></i></td>
             <td style="vertical-align:middle; white-space:nowrap">
                 <table class="observations">
                     <tr>
@@ -34,11 +34,12 @@
             </td>
         </tr>
     </table>
-    <table class="tableHourlyForecast" cellspacing="0">
+    <table id="tableHourlyForecast" cellspacing="0">
         <tr id="hourlyHours"></tr>
         <tr id="hourlyIcons"></tr>
         <tr id="hourlyTemp"></tr>
-        <tr id="hourlyPrec"></tr>
+		<tr id="hourlyAcc"></tr>
+		<tr id="hourlyPrec"></tr>		
     </table>
     <table id="forecast">
         <tr id="forecastTitles"></tr>
@@ -46,8 +47,8 @@
         <tr id="forecastSummaries"></tr>
         <tr id="forecastMaxTemps"></tr>
         <tr id="forecastMinTemps"></tr>
-        <tr id="forecastPrecipitations"></tr>
-        <tr id="forecastAccumulations"></tr>
+        <tr id="forecastAccumulations"></tr>		        
+		<tr id="forecastPrecipitations"></tr>		
     </table>
     <div id="darkSkyLink" style="width:100%; text-align:center; padding-top:10px"><a href="https://darksky.net/poweredby/">Powered by Dark Sky</a></div>
     <script type="text/javascript">initialize();</script>

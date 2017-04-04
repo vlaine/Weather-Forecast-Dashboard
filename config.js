@@ -14,10 +14,16 @@ var showScrollingAlerts = true;
 var showCurrentWeather = true;
 var showCurrentIcon = true;
 var showCurrentSummary = true;
-var showCurrentDateTime = true;
+var showCurrentDate = true;
+var showCurrentTime = true;
 var showForecastIcon = true;
 var showForecastSummary = true;
+var showForecastMinTemp = true;
+var showForecastAccumulation = true;
+var showForecastProbability = true;
 var showHourlyIcon = true;
+var showHourlyAccumulation = true;
+var showHourlyProbability = true;
 var showDarkSkyLink = true; // set to true if you have a free darksky api key.  
 
 var debugging = false; // will allow showing forecast for past days.  Usefull when playing with sample data
