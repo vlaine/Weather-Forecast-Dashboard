@@ -25,6 +25,7 @@ I installed the weather forecast dashboard on a Raspberry Pi W and mounted it be
 ### Tip 1: Disable screen saver.
 
 sudo apt-get update
+sudo apt-get install unclutter
 sudo apt-get install xscreensaver
 use the xscreensaver gui to disable the screen saver
 
@@ -37,8 +38,9 @@ exemple: chromium-browser --incognito --kiosk file:///boot/WeatherForecastDashbo
 
 sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
 
-add this line to the autostart file:
+add these lines to the autostart file:
 @chromium-browser --incognito --kiosk {pathToYour_index.html_file}
+@unclutter -idle 0.1 -root
 
 sudo reboot
 
