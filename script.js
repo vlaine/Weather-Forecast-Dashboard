@@ -66,7 +66,7 @@ function showCurrent(current, summary) {
 	$("#currentTemp").text(getTemp(current.temperature));
 	$("#currentApparentTemp").text(getTemp(current.apparentTemperature));	
 	$("#currentPrec").text(getProbability(current.precipProbability));
-	$("#currentWind").html('<span >' + Math.round(current.windSpeed)+'</span> ' + windUnit );
+    $("#currentWind").html(getWind(current.windSpeed, current.windBearing));
 }
 
 function showDateTime() {
@@ -83,6 +83,7 @@ function showForecast(days) {
     var summaries = [];
     var maxTemps = [];
     var minTemps = [];
+    var winds = [];
     var precipitations = [];
     var accumulations = [];
     
@@ -99,6 +100,7 @@ function showForecast(days) {
             summaries.push('<td>' + day.summary + '</td>');
             maxTemps.push('<td>' + getTemp(day.temperatureMax) + '</td>');
             minTemps.push('<td>' + getTemp(day.apparentTemperatureMin) + '</td>');
+            winds.push('<td>' + getWind(day.windSpeed, day.windBearing) + '</td>');
             precipitations.push('<td>' + getProbability(day.precipProbability) + '%' + '</td>');
 			accumulations.push('<td>' + getAccumulationStr(day, 24) + '</td>');
 			
@@ -111,6 +113,7 @@ function showForecast(days) {
     $("#forecastSummaries").html('<td></td>' + summaries.join(""));
     $("#forecastMaxTemps").html('<td><div class="vertical">max</div></td>' + maxTemps.join(""));
     $("#forecastMinTemps").html('<td><div class="vertical">min</div></td>' + minTemps.join(""));
+    $("#forecastWind").html('<td><div class="vertical">wind</div></td>' + winds.join(""));
     $("#forecastPrecipitations").html('<td><div class="vertical">prob</div></td>' + precipitations.join(""));
     $("#forecastAccumulations").html('<td><div class="vertical">acc</div></td>' + accumulations.join(""));
 
@@ -123,6 +126,7 @@ function showHourlyForecast(hourlyForecasts) {
     var hours = [];
     var icons = [];
     var temps = [];
+    var winds = [];
 	var accumulations = [];
     var precipitations = [];
     var i = 0;
@@ -137,6 +141,7 @@ function showHourlyForecast(hourlyForecasts) {
             hours.push("<th>" + dateTime.getHours() + "h</th>");
             if (showHourlyIcon){icons.push('<td><i class="' + getIconClass(hourly.icon, true) + '"></i></td>');}
             temps.push('<td>' + Math.round(hourly.temperature) + '°</td>');
+            winds.push('<td>' + getWind(hourly.windSpeed, hourly.windBearing) + '</td>');
 			accumulations.push('<td>' + getAccumulationStr(hourly, 1) + '</td>');
             precipitations.push('<td>' + getProbability(hourly.precipProbability) + '<span>%</span></td>');
         }
@@ -150,6 +155,7 @@ function showHourlyForecast(hourlyForecasts) {
     $("#hourlyHours").html(hours.join(""));
     $("#hourlyIcons").html(icons.join(""));
     $("#hourlyTemp").html(temps.join(""));	
+    $("#hourlyWind").html(winds.join(""));	
 	$("#hourlyAcc").html(accumulations.join(""));	
 	$("#hourlyPrec").html(precipitations.join(""));	
 }
@@ -166,10 +172,12 @@ function hideUnwantedData()
 	if (!showCurrentTime) { $("#currentTime").remove(); }
 	if (!showForecastIcon) { $("#forecastIcons").remove(); }
 	if (!showForecastSummary) { $("#forecastSummaries").remove(); }
-	if (!showForecastMinTemp) { $("#forecastMinTemps").remove(); }
+    if (!showForecastMinTemp) { $("#forecastMinTemps").remove(); }
+    if (!showForecastWind) { $("#forecastWind").remove(); }
 	if (!showForecastAccumulation) { $("#forecastAccumulations").remove(); }
 	if (!showForecastProbability) { $("#forecastPrecipitations").remove(); }
-	if (!showHourlyIcon) { $("#hourlyIcons").remove(); }
+    if (!showHourlyIcon) { $("#hourlyIcons").remove(); }
+    if (!showHourlyWind) { $("#hourlyWind").remove(); }
 	if (!showHourlyAccumulation) { $("#hourlyAcc").remove(); }
 	if (!showHourlyProbability) { $("#hourlyPrec").remove(); }
 	if (!showDarkSkyLink) { $("#darkSkyLink").remove(); }
@@ -198,4 +206,8 @@ function getAccumulationStr(forecastItem, multiplier)
 							   
 	var acc = (accumulation > 0 && accumulation < 1) ? (Math.round(accumulation*10)/10).toString().replace("0.",".") : Math.round(accumulation)
 	return acc + '<span style="font-size:14px">' + (forecastItem.precipType == 'snow' ? snowPrecUnit : rainPrecUnit) + '</span>';
+}
+
+function getWind(speed, deg) {
+    return '<span>' + Math.round(speed) + '</span>' + windUnit + '<span class="windContainer"><span class="wind" style="transform: rotate(' + deg + 'deg);">↑</span></span>';
 }

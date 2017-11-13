@@ -225,7 +225,7 @@ body {
 #tableHourlyForecast th,
 #tableHourlyForecast td {
     text-align: center;
-    padding-left: 5px;
+    padding: 0 5px 0 5px;
     border-left: 1px solid white;
     background-color: #073053;
 }
@@ -266,6 +266,14 @@ body {
 
 #tableHourlyForecast #hourlyPrec span {
     font-size: 10px;
+}
+
+.wind {
+    display: inline-block;
+}
+
+.windContainer {
+    padding-left:3px;
 }
 
 .icon {
