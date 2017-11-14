@@ -13,8 +13,6 @@ html {
 }
 
 body {
-    background-color: #062845;
-    color: #fff;
     font-size: 16px;
 }
 
@@ -66,7 +64,6 @@ body {
 
 #alerts
 {
-    background-color: red;
     padding: 5px;
     display: none;
 }
@@ -165,7 +162,6 @@ body {
 }
 #forecast th 
 {
-    border-top: 1px solid white;
     border-radius: 10px 10px 0 0;
     padding-top: 5px;
 }
@@ -187,9 +183,6 @@ body {
 #forecast td 
 {
     text-align: center;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-    background-color: #073053;
 }
 
 #forecast th:first-child,
@@ -200,7 +193,6 @@ body {
 
 #forecast tr:last-child td 
 {
-    border-bottom: 1px solid white;
     border-radius: 0 0 10px 10px;
     padding-bottom: 5px;
 }
@@ -226,12 +218,6 @@ body {
 #tableHourlyForecast td {
     text-align: center;
     padding: 0 5px 0 5px;
-    border-left: 1px solid white;
-    background-color: #073053;
-}
-
-#tableHourlyForecast th {
-    border-top: 1px solid white;
 }
 
 #tableHourlyForecast th:first-child {
@@ -242,21 +228,12 @@ body {
     border-top-right-radius: 10px;
 }
 
-#tableHourlyForecast tr:last-child td {
-    border-bottom: 1px solid white;
-}
-
 #tableHourlyForecast tr:last-child td:first-child {
     border-bottom-left-radius: 10px;
 }
 
 #tableHourlyForecast tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
-}
-
-#tableHourlyForecast tr th:last-child, 
-#tableHourlyForecast tr td:last-child {
-    border-right: 1px solid white;
 }
 
 #tableHourlyForecast .icon {

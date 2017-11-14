@@ -2,6 +2,7 @@
 
 function initialize()
 {
+    $('#theme').attr('href', 'theme/' + theme + '.css');
 	hideUnwantedData();
 	$("#apparentTempLabel").text(apparentTempLabel);
 	$("#windLabel").text(windLabel);
@@ -66,7 +67,7 @@ function showCurrent(current, summary) {
 	$("#currentTemp").text(getTemp(current.temperature));
 	$("#currentApparentTemp").text(getTemp(current.apparentTemperature));	
 	$("#currentPrec").text(getProbability(current.precipProbability));
-    $("#currentWind").html(getWind(current.windSpeed, current.windBearing));
+    $("#currentWind").html(getWind(current.windSpeed, current.windBearing, showCurrentWindBearing));
 }
 
 function showDateTime() {
@@ -100,7 +101,7 @@ function showForecast(days) {
             summaries.push('<td>' + day.summary + '</td>');
             maxTemps.push('<td>' + getTemp(day.temperatureMax) + '</td>');
             minTemps.push('<td>' + getTemp(day.apparentTemperatureMin) + '</td>');
-            winds.push('<td>' + getWind(day.windSpeed, day.windBearing) + '</td>');
+            winds.push('<td>' + getWind(day.windSpeed, day.windBearing, showForecastWindBearing) + '</td>');
             precipitations.push('<td>' + getProbability(day.precipProbability) + '%' + '</td>');
 			accumulations.push('<td>' + getAccumulationStr(day, 24) + '</td>');
 			
@@ -141,7 +142,7 @@ function showHourlyForecast(hourlyForecasts) {
             hours.push("<th>" + dateTime.getHours() + "h</th>");
             if (showHourlyIcon){icons.push('<td><i class="' + getIconClass(hourly.icon, true) + '"></i></td>');}
             temps.push('<td>' + Math.round(hourly.temperature) + '°</td>');
-            winds.push('<td>' + getWind(hourly.windSpeed, hourly.windBearing) + '</td>');
+            winds.push('<td>' + getWind(hourly.windSpeed, hourly.windBearing, showHourlyWindBearing) + '</td>');
 			accumulations.push('<td>' + getAccumulationStr(hourly, 1) + '</td>');
             precipitations.push('<td>' + getProbability(hourly.precipProbability) + '<span>%</span></td>');
         }
@@ -208,6 +209,11 @@ function getAccumulationStr(forecastItem, multiplier)
 	return acc + '<span style="font-size:14px">' + (forecastItem.precipType == 'snow' ? snowPrecUnit : rainPrecUnit) + '</span>';
 }
 
-function getWind(speed, deg) {
-    return '<span>' + Math.round(speed) + '</span>' + windUnit + '<span class="windContainer"><span class="wind" style="transform: rotate(' + deg + 'deg);">↑</span></span>';
+function getWind(speed, deg, showWindBearing) {
+    var strWind = '<span>' + Math.round(speed) + '</span>' + windUnit;
+    if (showWindBearing)
+    {
+        strWind = strWind + '<span class="windContainer"><span class="wind" style="transform: rotate(' + deg + 'deg);">↑</span></span>'
+    }
+    return strWind;
 }
