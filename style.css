@@ -109,6 +109,14 @@ body {
 	padding-right:4px;
 }
 
+#currentHumidity {
+    font-size: 28px;
+}
+
+#currentHumidity span {
+    font-size: 16px;
+}
+
 #currentPrec {
     font-size: 32px;
 }
@@ -241,7 +249,8 @@ body {
     height: 32px !important;
 }
 
-#tableHourlyForecast #hourlyPrec span {
+#tableHourlyForecast #hourlyPrec span,
+#tableHourlyForecast #hourlyHumidity span {
     font-size: 10px;
 }
 

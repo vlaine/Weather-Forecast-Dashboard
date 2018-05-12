@@ -15,21 +15,29 @@ var showScrollingAlerts = true;
 var showCurrentWeather = true;
 var showCurrentIcon = true;
 var showCurrentSummary = true;
+var showCurrentWind = true;
 var showCurrentWindBearing = true;
+var showCurrentHumidity = true;
 var showCurrentDate = true;
 var showCurrentTime = true;
+
+var showHourlyIcon = true;
+var showHourlyWind = true;
+var showHourlyWindBearing = true;
+var showHourlyAccumulation = true;
+var showHourlyHumidity = true;
+var showHourlyProbability = true;
+
 var showForecastIcon = true;
 var showForecastSummary = true;
 var showForecastMinTemp = true;
 var showForecastWind = true;
 var showForecastWindBearing = true;
+var showForecastHumidity = true;
 var showForecastAccumulation = true;
 var showForecastProbability = true;
-var showHourlyIcon = true;
-var showHourlyWind = true;
-var showHourlyWindBearing = true;
-var showHourlyAccumulation = true;
-var showHourlyProbability = true;
+
+
 var showDarkSkyLink = true; // set to true if you have a free darksky api key.  
 
 var debugging = false; // will allow showing forecast for past days.  Usefull when playing with sample data
