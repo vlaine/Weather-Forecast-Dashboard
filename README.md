@@ -32,7 +32,7 @@ use the xscreensaver gui to disable the screen saver
 ### Tip 2: Run chromium in full screen
 
 chromium-browser --incognito --kiosk {pathToYour_index.html_file}
-exemple: chromium-browser --incognito --kiosk file:///boot/WeatherForecastDashboard/index.html
+example: chromium-browser --incognito --kiosk file:///boot/WeatherForecastDashboard/index.html
 
 ### Tip 3: Autostart and boot directly to WeatherForecastDashboard
 
