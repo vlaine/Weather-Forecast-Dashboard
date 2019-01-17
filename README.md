@@ -36,6 +36,8 @@ example: chromium-browser --incognito --kiosk file:///boot/WeatherForecastDashbo
 
 ### Tip 3: Autostart and boot directly to WeatherForecastDashboard
 
+sudo mkdir -p /home/pi/.config/lxsession/LXDE-pi
+sudo cp /etc/xdg/lxsession/LXDE-pi/autostart /home/pi/.config/lxsession/LXDE-pi/
 sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
 
 add these lines to the autostart file:
