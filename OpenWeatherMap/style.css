@@ -1,0 +1,326 @@
+﻿body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow:hidden;
+}
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    font-size: 16px;
+}
+
+.marquee {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 50s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {text-indent: 27.5em;}
+    100% {text-indent: -105em;}
+}
+
+[class*=" diw-"]:before,
+[class^=diw-]:before,
+[data-icon]:before {
+    font-family: dripicons-weather !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face 
+{
+    font-family: dripicons-weather;
+    src: url(fonts/dripicons-weather.eot);
+    src: url(fonts/dripicons-weather.eot?#iefix) format("embedded-opentype"),url(fonts/dripicons-weather.woff) format("woff"),url(fonts/dripicons-weather.ttf) format("truetype"),url(fonts/dripicons-weather.svg#dripicons-weather) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+[data-icon]:before 
+{
+    content: attr(data-icon);
+}
+
+#alerts
+{
+    padding: 5px;
+    display: none;
+}
+
+.observations td
+{
+    vertical-align: bottom;
+}
+
+.observations .legend {
+    font-size: 12px;
+}
+.observations .bottom {
+    line-height: 22px;
+}
+
+.observations .top
+{
+    line-height: 36px;
+}
+
+#currentSummary {
+    width: 100%;
+    vertical-align: top;
+    padding-top: 25px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+#currentIcon {
+    width: 128px;
+    height: 128px;
+}
+
+#currentTemp {
+    font-size: 48px;
+	text-align:right;
+	padding-right:0;
+}
+
+#currentApparentTemp {
+    font-size: 28px;
+    text-align: right;
+	padding-right:4px;
+}
+
+#currentHumidity {
+    font-size: 28px;
+}
+
+#currentHumidity span {
+    font-size: 16px;
+}
+
+#currentPrec {
+    font-size: 32px;
+}
+
+#currentWind span {
+    font-size: 32px;
+}
+
+.currentDateTime {
+    text-align: right;
+    width: 100%;
+    vertical-align: top;
+    padding-top: 25px;
+}
+
+.currentDateTime span {
+    white-space: nowrap;
+    text-align: right;
+    width: 100%;
+}
+
+#currentDate {
+    font-size: 24px;
+}
+
+#currentTime {
+    font-size: 60px;
+}
+
+.vertical-text 
+{
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+}
+
+.vertical 
+{
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+#forecast 
+{
+	width: 100%;
+    border-spacing: 5px 0;
+    margin: 20px 5px 0 5px;
+}
+#forecast th 
+{
+    border-radius: 10px 10px 0 0;
+    padding-top: 5px;
+}
+
+#forecast th:first-child 
+{
+        
+    border-radius: 7px 7px 0 0;
+}
+
+#forecast td:first-child 
+{
+    padding-left: 5px;
+    padding-right: 0;
+    margin-right:-10px;
+}
+
+#forecast th,
+#forecast td 
+{
+    text-align: center;
+}
+
+#forecast th:first-child,
+#forecast td:first-child 
+{
+    width: 10px !important;
+}
+
+#forecast tr:last-child td 
+{
+    border-radius: 0 0 10px 10px;
+    padding-bottom: 5px;
+}
+
+#forecast tr:last-child td:first-child 
+{
+    border-radius: 0 0 7px 7px;
+}
+
+#forecastMaxTemps td {
+    font-size: 24px;
+    padding-top: 5px;
+}
+
+#tableHourlyForecast {
+    width: calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: -webkit-calc(100% - 20px);
+	margin: 20px 0 0 10px;
+}
+
+#tableHourlyForecast th,
+#tableHourlyForecast td {
+    text-align: center;
+    padding: 0 5px 0 5px;
+}
+
+#tableHourlyForecast th:first-child {
+    border-top-left-radius: 10px;
+}
+
+#tableHourlyForecast th:last-child {
+    border-top-right-radius: 10px;
+}
+
+#tableHourlyForecast tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+#tableHourlyForecast tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+#tableHourlyForecast .icon {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+#tableHourlyForecast #hourlyPrec span,
+#tableHourlyForecast #hourlyHumidity span {
+    font-size: 10px;
+}
+
+.wind {
+    display: inline-block;
+}
+
+.windContainer {
+    padding-left:3px;
+}
+
+.icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    width: 64px;
+    height: 64px;
+}
+
+.icon-chanceflurries { background: url(icons/chanceflurries.svg), linear-gradient(transparent, transparent); }
+.icon-chancerain { background: url(icons/chancerain.svg), linear-gradient(transparent, transparent); }
+.icon-chancesleet { background: url(icons/chancesleet.svg), linear-gradient(transparent, transparent); }
+.icon-chancesnow { background: url(icons/chancesnow.svg), linear-gradient(transparent, transparent); }
+.icon-chancetstorms { background: url(icons/chancetstorms.svg), linear-gradient(transparent, transparent); }
+.icon-clear { background: url(icons/clear.svg), linear-gradient(transparent, transparent); }
+.icon-cloudy { background: url(icons/cloudy.svg), linear-gradient(transparent, transparent); }
+.icon-flurries { background: url(icons/flurries.svg), linear-gradient(transparent, transparent); }
+.icon-fog { background: url(icons/fog.svg), linear-gradient(transparent, transparent); }
+.icon-hail { background: url(icons/hazy.svg), linear-gradient(transparent, transparent); }
+.icon-hazy { background: url(icons/hazy.svg), linear-gradient(transparent, transparent); }
+.icon-mostlycloudy { background: url(icons/mostlycloudy.svg), linear-gradient(transparent, transparent); }
+.icon-mostlysunny { background: url(icons/mostlysunny.svg), linear-gradient(transparent, transparent); }
+.icon-partlycloudy { background: url(icons/partlycloudy.svg), linear-gradient(transparent, transparent); }
+.icon-partlysunny { background: url(icons/partlysunny.svg), linear-gradient(transparent, transparent); }
+.icon-rain { background: url(icons/rain.svg), linear-gradient(transparent, transparent); }
+.icon-sleet { background: url(icons/sleet.svg), linear-gradient(transparent, transparent); }
+.icon-snow { background: url(icons/snow.svg), linear-gradient(transparent, transparent); }
+.icon-sunny { background: url(icons/sunny.svg), linear-gradient(transparent, transparent); }
+.icon-thunderstorm { background: url(icons/tstorms.svg), linear-gradient(transparent, transparent); }
+.icon-wind { background: url(icons/wind.svg), linear-gradient(transparent, transparent); }
+.icon-unknown { background: url(icons/unknown.svg), linear-gradient(transparent, transparent); }
+
+.icon-chanceflurriesnight  { background: url(icons/chanceflurries.svg), linear-gradient(transparent, transparent); }
+.icon-chancerainnight  { background: url(icons/chancerain.svg), linear-gradient(transparent, transparent); }
+.icon-chancesleetnight  { background: url(icons/chancesleet.svg), linear-gradient(transparent, transparent); }
+.icon-chancesnownight  { background: url(icons/chancesnow.svg), linear-gradient(transparent, transparent); }
+.icon-chancetstormsnight  { background: url(icons/chancetstorms.svg), linear-gradient(transparent, transparent); }
+.icon-clearnight { background: url(icons/clear-night.svg), linear-gradient(transparent, transparent); }
+.icon-cloudynight  { background: url(icons/cloudy.svg), linear-gradient(transparent, transparent); }
+.icon-flurriesnight  { background: url(icons/flurries.svg), linear-gradient(transparent, transparent); }
+.icon-fognight  { background: url(icons/fog.svg), linear-gradient(transparent, transparent); }
+.icon-hailnight  { background: url(icons/hazy.svg), linear-gradient(transparent, transparent); }
+.icon-hazynight  { background: url(icons/hazy.svg), linear-gradient(transparent, transparent); }
+.icon-mostlycloudynight { background: url(icons/mostlycloudy-night.svg), linear-gradient(transparent, transparent); }
+.icon-mostlysunnynight { background: url(icons/mostlysunny-night.svg), linear-gradient(transparent, transparent); }
+.icon-partlycloudynight { background: url(icons/partlycloudy-night.svg), linear-gradient(transparent, transparent); }
+.icon-partlysunnynight { background: url(icons/partlysunny-night.svg), linear-gradient(transparent, transparent); }
+.icon-rainnight  { background: url(icons/rain.svg), linear-gradient(transparent, transparent); }
+.icon-sleetnight  { background: url(icons/sleet.svg), linear-gradient(transparent, transparent); }
+.icon-snownight  { background: url(icons/snow.svg), linear-gradient(transparent, transparent); }
+.icon-sunnynight { background: url(icons/sunny-night.svg), linear-gradient(transparent, transparent); }
+.icon-thunderstormnight  { background: url(icons/tstorms.svg), linear-gradient(transparent, transparent); }
+.icon-windnight  { background: url(icons/wind.svg), linear-gradient(transparent, transparent); }
+.icon-unknownnight  { background: url(icons/unknown.svg), linear-gradient(transparent, transparent); }
+
+
+
+
+

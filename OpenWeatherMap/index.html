@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Weather Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="config.js" type="text/javascript"></script>
+    <script src="icon_mapping.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="theme/blue.css" id="theme">
+</head>
+<body>
+    <div id="alerts" class="marquee"></div>
+    <table id="header" cellspacing="20" style="margin: -30px -10px -40px -30px;">
+        <tr>
+            <td><i id="currentIcon"></i></td>
+            <td style="vertical-align:middle; white-space:nowrap">
+                <table class="observations">
+                    <tr>
+                        <td id="currentTemp" colspan="2"></td>
+                        <td id="humidityLabel" class="legend top" style="padding-left:15px">hum</td>
+                        <td class="top"><span id="currentHumidity"></span>%</td>
+                    </tr>
+                    <tr>
+                        <td id="apparentTempLabel" class="observations legend bottom"></td>
+                        <td id="currentApparentTemp"></td>
+                        <td id="windLabel" class="observations legend bottom" style="padding-left:15px"></td>
+                        <td id="currentWind"></td>
+                    </tr>
+                </table>
+            </td>
+            <td id="currentSummary"></td>
+            <td class="currentDateTime">
+                <span id="currentDate"></span><br />
+                <span id="currentTime"></span>
+            </td>
+        </tr>
+    </table>
+    <table id="tableHourlyForecast" cellspacing="0">
+        <tr id="hourlyHours"></tr>
+        <tr id="hourlyIcons"></tr>
+        <tr id="hourlyTemp"></tr>
+        <tr id="hourlyWind"></tr>
+        <tr id="hourlyHumidity"></tr>
+        <tr id="hourlyAcc"></tr>
+        <tr id="hourlyPrec"></tr>
+    </table>
+    <table id="forecast">
+        <tr id="forecastTitles"></tr>
+        <tr id="forecastIcons"></tr>
+        <tr id="forecastSummaries"></tr>
+        <tr id="forecastMaxTemps"></tr>
+        <tr id="forecastMinTemps"></tr>
+        <tr id="forecastWind"></tr>
+        <tr id="forecastHumidity"></tr>
+        <tr id="forecastAccumulations"></tr>
+        <tr id="forecastPrecipitations"></tr>
+    </table>
+    <script type="text/javascript">initialize();</script>
+</body>
+</html>

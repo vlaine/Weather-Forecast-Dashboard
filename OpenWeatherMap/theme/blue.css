@@ -1,0 +1,43 @@
+﻿body {
+    background-color: #062845;
+    color: #fff;
+}
+
+#forecast td,
+#forecast th,
+#tableHourlyForecast td,
+#tableHourlyForecast th {
+    background-color: #073053;
+    border-left: 1px solid white;
+}
+
+#forecast td,
+#forecast th {
+    border-right: 1px solid white;
+}
+
+#forecast th {
+    border-top: 1px solid white;
+}
+
+#forecast tr:last-child td {
+    border-bottom: 1px solid white;
+}
+
+#tableHourlyForecast th {
+    border-top: 1px solid white;
+}
+
+#tableHourlyForecast tr:last-child td {
+    border-bottom: 1px solid white;
+}
+
+#tableHourlyForecast tr th:last-child,
+#tableHourlyForecast tr td:last-child {
+    border-right: 1px solid white;
+}
+
+#alerts {
+    background-color: red;
+    color: white;
+}
