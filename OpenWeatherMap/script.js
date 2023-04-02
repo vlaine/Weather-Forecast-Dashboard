@@ -88,7 +88,6 @@ function getForecast()
             type: 'GET',
             url: url,
             cache: false,
-            dataType: "jsonp",
             success: function (data) {
                 showData(data);
             },
@@ -310,6 +309,10 @@ function getAccumulationStr(rain, snow)
 }
 
 function getWind(speed, deg, showWindBearing) {
+	if (units != 'imperial')
+	{
+		speed = speed * 3.6; // convert m/s to km/h
+	}
     var strWind = '<span>' + Math.round(speed) + '</span>' + windUnit;
     if (showWindBearing)
     {
