@@ -60,7 +60,7 @@ function setParamValues() {
         labels = labelsDict[lang];
     }
 
-    url = 'http://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + '&lon=' + longitude + '&units=' + units + '&lang=' + lang + '&APPID=' + apiKey;
+    url = 'http://api.openweathermap.org/data/3.0/onecall?lat=' + latitude + '&lon=' + longitude + '&units=' + units + '&lang=' + lang + '&APPID=' + apiKey;
 
 }
 
@@ -91,11 +91,24 @@ function getForecast()
             success: function (data) {
                 showData(data);
             },
-            error: function () {
-                console.log("An error occurred.");
-				debugger;
+            error: function (xhr, status, error) {
+                showError(xhr.responseText);				
             }
         });
+}
+
+function showError(error) {
+    var divAlerts = $("#alerts");
+
+    if (error != null && error != '') {
+        hasAlerts = true;
+        divAlerts.text(error);
+        divAlerts.show();     
+    }
+    else {
+        hasAlerts = false;
+        divAlerts.hide();     
+    }
 }
 
 function showData(data) {
