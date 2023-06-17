@@ -290,14 +290,16 @@ function getProbability(probability) {
 
 function getAccumulationStr(rain, snow)
 {
-    var accumulationStr = '';
+	var accumulationStr = '';
     var separator = '';    
 
     if (rain !== null && rain !== undefined) {
-        if (rain["1h"] !== null && rain["1h"] !== undefined)
+		if (rain["1h"] !== null && rain["1h"] !== undefined)
         {
             rain = rain["1h"];
         }
+		
+		if (units = 'imperial') { rain = rain / 25.4; } // convert mm to in
 
         if (rain > 1) { rain = Math.round(rain); }
         else { rain = Math.round(rain * 10) / 10; }
@@ -306,10 +308,15 @@ function getAccumulationStr(rain, snow)
     }
 
     if (snow !== null && snow !== undefined) {
-        if (snow["1h"] !== null && snow["1h"] !== undefined)
+		if (snow["1h"] !== null && snow["1h"] !== undefined)
         {
             snow = snow["1h"];
         }
+		
+		if (units = 'imperial') 
+			{ snow = snow / 25.4; } // convert mm to in
+		else
+			{ snow = snow / 10 } // convert mm to cm
 
         if (snow > 1) { snow = Math.round(snow); }
         else { snow = Math.round(snow * 10) / 10; }
