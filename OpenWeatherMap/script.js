@@ -51,6 +51,7 @@ function setParamValues() {
     showForecastHumidity = getQueryStringParamAsBool('showForecastHumidity', showForecastHumidity);
     showForecastAccumulation = getQueryStringParamAsBool('showForecastAccumulation', showForecastAccumulation);
     showForecastProbability = getQueryStringParamAsBool('showForecastProbability', showForecastProbability);
+	showDetailedSummary = getQueryStringParamAsBool('showDetailedSummary', showDetailedSummary);	
     debugging = getQueryStringParamAsBool('debugging', debugging);
     lang = getQueryStringParam('lang', lang);
 
@@ -137,8 +138,8 @@ function showAlerts(alerts) {
     }
 }
 
-function showCurrent(current) {
-    $("#currentSummary").html(current.weather[0].description);
+function showCurrent(current) {	
+    $("#currentSummary").html(getSummary(current));
     $("#currentIcon").attr('class', getIconClass(current.weather[0]));
     $("#currentTemp").text(getTemp(current.temp));
 	$("#currentApparentTemp").text(getTemp(current.feels_like));	
@@ -174,7 +175,7 @@ function showForecast(days) {
         if (dayDate >= now || debugging) {
             titles.push('<th>' + (dayDate == now ? labels.todayLabel : labels.week[dateTime.getDay()]) + '</th>');
             icons.push('<td><i class="' + getIconClass(day.weather[0]) + '"></i></td>');
-            summaries.push('<td>' + day.weather[0].description + '</td>');
+            summaries.push('<td>' + getSummary(day) + '</td>');
             maxTemps.push('<td>' + getTemp(day.temp.max) + '</td>');
             minTemps.push('<td>' + getTemp(day.temp.min) + '</td>');
             winds.push('<td>' + getWind(day.wind_speed, day.wind_deg, showForecastWindBearing) + '</td>');
@@ -339,4 +340,21 @@ function getWind(speed, deg, showWindBearing) {
         strWind = strWind + '<span class="windContainer"><span class="wind" style="transform: rotate(' + deg + 'deg);">↑</span></span>'
     }
     return strWind;
+}
+
+function getSummary(data)
+{
+	var description = data.weather[0].description;
+	var separator = '<br/>';
+	if (description === null || description === undefined) { 
+		description= ''; 
+		separator = '';
+	}
+	
+	if(!showDetailedSummary) { return description; }
+	
+	var summary = data.summary;
+	if (summary !== null && summary !== undefined) { return description + separator + summary; }
+	
+	return description;
 }

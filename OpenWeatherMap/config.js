@@ -39,6 +39,7 @@ var showForecastWindBearing = false;
 var showForecastHumidity = false;
 var showForecastAccumulation = true;
 var showForecastProbability = true;
+var showDetailedSummary = true;
 
 var debugging = false; // will allow showing forecast for past days.  Usefull when playing with sample data
 
