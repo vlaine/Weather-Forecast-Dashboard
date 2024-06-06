@@ -300,7 +300,7 @@ function getAccumulationStr(rain, snow)
             rain = rain["1h"];
         }
 		
-		if (units = 'imperial') { rain = rain / 25.4; } // convert mm to in
+		if (units == 'imperial') { rain = rain / 25.4; } // convert mm to in
 
         if (rain > 1) { rain = Math.round(rain); }
         else { rain = Math.round(rain * 10) / 10; }
@@ -314,7 +314,7 @@ function getAccumulationStr(rain, snow)
             snow = snow["1h"];
         }
 		
-		if (units = 'imperial') 
+		if (units == 'imperial') 
 			{ snow = snow / 25.4; } // convert mm to in
 		else
 			{ snow = snow / 10 } // convert mm to cm
